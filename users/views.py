@@ -15,10 +15,9 @@ def login_view(request):
         # Accessing username and password from form data
         username = request.POST["username"]
         password = request.POST["password"]
-
+        
         # Check if username and password are correct, returning User object if so
         user = authenticate(request, username=username, password=password)
-
         # If user object is returned, log in and route to index page:
         if user:
             login(request, user)
